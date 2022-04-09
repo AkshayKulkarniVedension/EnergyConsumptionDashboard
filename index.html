@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="dashboard-panel.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <div class="logo d">
+          <i class="fas fa-bolt"></i>
+          <div class="logoname"><span id="energy">ENERGY</span> Dashboard</div>
+        </div>
+
+        <div class="searchbox d">
+          <!-- <form action="#">
+            <input type="text" placeholder="Search" />
+            <i class="fa fa-search"></i>
+          </form> -->
+        </div>
+        <div class="box">
+          <input class="toggle" id="toggleBtn" type="checkbox" />
+        </div>
+        <div class="navitem d">
+          <div class="account">
+            <i class="fas fa-user"></i>
+            <span class="name">John Doe</span>
+          </div>
+          <div class="account">
+            <i class="fas fa-map-marker-alt"></i>
+            <span class="name">Philippines</span>
+          </div>
+          <div class="icons">
+            <ul>
+              <li><i class="fa fas fa-sign-out-alt" id="signout"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar bg">
+        <ul>
+          <div class="toggle">
+            <li>
+              <a href="#">Carbon Footprint calculation</a>
+            </li>
+
+            <li>
+              <a href="#">Energy Intensity Report</a>
+            </li>
+
+            <li>
+              <a href="#">Consumption Comparision Report</a>
+            </li>
+
+            <li>
+              <a href="#">Grphical Dashboard</a>
+            </li>
+
+            <li>
+              <a href="#">Temp Vs Energy Report</a>
+            </li>
+            <li>
+              <a href="#">Highest & Lowest Consumption Report</a>
+            </li>
+            <li>
+              <a href="#">conditional Monitoring</a>
+            </li>
+            <li>
+              <a href="#">Equipment Performance</a>
+            </li>
+            <li>
+              <a href="#">Per Hour Energy Consumption </a>
+            </li>
+          </div>
+        </ul>
+      </div>
+
+      <div class="header">
+        <div class="tittle">
+          <h2>Energy Consumption Dashboard</h2>
+        </div>
+      </div>
+
+      <div class="card1 bg card row-1">
+        <div class="box">
+          <div>
+            <canvas id="myChartCoal"></canvas>
+            <script src="script.js"></script>
+          </div>
+        </div>
+      </div>
+
+      <div class="card2 bg card row-1">
+        <div class="box">
+          <div>
+            <canvas id="myChartElectricity"></canvas>
+            <script src="electricity.js"></script>
+          </div>
+        </div>
+      </div>
+
+      <div class="card3 bg card row-1">
+        <div class="box">
+          <div>
+            <canvas id="myChartPolar"></canvas>
+            <script src="polar.js"></script>
+          </div>
+        </div>
+      </div>
+
+      <div class="graph bg">
+        <div class="chart">
+          <div class="status">Energy Consumption during year</div>
+          <div>
+            <canvas id="myChartBar"></canvas>
+            <script src="bar.js"></script>
+          </div>
+        </div>
+      </div>
+
+      <div class="debitcard">
+        <img src="card6.png" width="100%" height="100%" alt="" />
+      </div>
+
+      <div class="card4 bg card row-2">
+        <div class="box">
+          <div>
+            <canvas id="myChartLine"></canvas>
+            <script src="line.js"></script>
+          </div>
+        </div>
+      </div>
+
+      <div class="card5 bg card row-2">
+        <div class="box">
+          <div>
+            <canvas id="myChartVertical"></canvas>
+            <script src="vertical.js"></script>
+          </div>
+        </div>
+      </div>
+
+      <div class="card6 bg card row-2">
+        <div class="box">
+          <div>
+            <canvas id="myChartMixed"></canvas>
+            <script src="lineBar.js"></script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".togglebtn").click(function () {
+        $(".toggle").slideToggle();
+      });
+
+      $(".togglebtn").click(function () {
+        $(".togglebtn").toggleClass("active");
+      });
+    });
+  </script>
+</html>
